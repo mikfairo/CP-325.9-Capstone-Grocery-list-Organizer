@@ -60,6 +60,31 @@ const bakingAndSpicesIngredients = {
       "https://thumbs.dreamstime.com/b/heap-japanese-furikake-seasoning-meant-to-be-sprinkled-top-cooked-rice-isolated-white-background-137584795.jpg",
     measurement: "",
   },
-};
+  bayLeaf: {
+    name: "Bay Leaves",
+    thumbnail:
+      "https://t3.ftcdn.net/jpg/01/91/82/66/360_F_191826603_SH6qxkyDUHMIRT3rS8u32vKUxGtprCnA.jpg",
+    measurement: "",
+  },
+  cinnamonStick: {
+    name: "Cinnamon Sticks",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/cinnamon-sticks-isolated-on-white-260nw-483404791.jpg",
+    measurement: "",
+  },
+  starAnise: {
+    name: "Star Anise",
+    thumbnail:
+      "https://img.freepik.com/premium-photo/pile-star-anise-seeds-white-background_664644-2938.jpg",
+    measurement: "",
+  },
+  whitePepper: {
+    name: "White Pepper Powder",
+    thumbnail:
+      "https://t4.ftcdn.net/jpg/01/26/96/93/360_F_126969372_0TzSTHQ9erMU4yjqq9ZMA5JMJ74GKTjB.jpg",
+    measurement: "",
+  },
 
+};
+ 
 export default bakingAndSpicesIngredients;
