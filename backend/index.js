@@ -89,7 +89,7 @@ app.get("/get-all-condiments", async (req, res) => {
   });
 });
 app.get("/get-all-baking-and-spices", async (req, res) => {
-  const ingredients = await allIngredientsModel.find({ category: 'Baking And Spices' }); 
+  const ingredients = await allIngredientsModel.find({ category: 'Baking and Spices' }); 
   console.log("Sending data")
   res.send({
     data: ingredients,
