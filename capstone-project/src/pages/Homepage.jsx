@@ -1,18 +1,30 @@
 import { useState } from "react";
-import allCategories from "./components/all-ingredients";
-import Form from "./components/Form";
-import "./index.css";
+import Nav from "../components/Nav";
+import Form from "../components/Form";
+import "../index.css";
 import { useEffect } from "react";
 import { useRef } from "react";
 
-function App() {
+function HomePage() {
   
   const [inputText, setInputText] = useState("");
+  const [allIngredients, setAllIngredients] = useState([]);
   const [filteredIngredients, setFilteredIngredients] = useState([]);
   const [recipeSelections, setRecipeSelections] = useState([])
   const inputRef = useRef();
 
-  const allIngredients = allCategories.flat();
+ 
+  useEffect(() => {
+   const fetchIngredients = async () => {
+    const response = await fetch('http://localhost:3000/all-ingredients')
+    console.log(response)
+    const ingredients = await response.json()
+    const data = ingredients.data
+    setAllIngredients(data)
+   } 
+   fetchIngredients();
+  }, []); //loads all ingredient data
+  
   useEffect(() => {
     if (inputText) {
       const filtered = allIngredients.filter((ingredient) => 
@@ -30,6 +42,8 @@ function App() {
       <h1 className="text-black text-5xl text-center front-extrabold">
         Grocery List Organizer
       </h1>
+      <br />
+      <Nav/>
       {recipeSelections.map((recipe) => (
         <h1>{recipe}</h1>
       ))}
@@ -71,4 +85,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;

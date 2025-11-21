@@ -15,6 +15,7 @@ const ingredientSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
+    unique: true
   },
   thumbnail: {
     type: String,
@@ -24,15 +25,21 @@ const ingredientSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
+  category: {
+    type: String,
+    default: ""
+  }
 });
 
-const categoryModels = [];
+// const categoryModels = [];
 
-categoriesSet.forEach((category) => {
-  categoryModels.push(mongoose.model(category, ingredientSchema));
-});
+// categoriesSet.forEach((category) => {
+//   categoryModels.push(mongoose.model(category, ingredientSchema));
+// });
+
 
 export {
-  categoryModels,
-  categoriesSet,
+  // categoryModels,
+  // categoriesSet,
+  ingredientSchema,
 };
