@@ -24,7 +24,7 @@ const vegetableIngredients = [
     name: 'Carrot',
     category: 'Vegetable',
     thumbnail:
-      'https://as2.ftcdn.net/jpg/01/38/59/65/1000_F_138596527_vo9I8cKl20phDuIauIEfeQ2mWGw60Wjm.jpg',
+      'https://t3.ftcdn.net/jpg/02/99/43/48/360_F_299434842_UF1e0k44KUpkdtAEu0XbbPVnTHFuRwAm.jpg',
     measurement: '',
   },
   {
