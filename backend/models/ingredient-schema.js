@@ -9,6 +9,7 @@ const categoriesSet = [
   "Dairy",
   "Condiments",
   "Baking And Spices",
+  "Other",
 ];
 
 const ingredientSchema = new mongoose.Schema({

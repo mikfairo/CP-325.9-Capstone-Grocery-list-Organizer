@@ -6,26 +6,8 @@ import {
   ingredientSchema,
 } from "./models/ingredient-schema.js";
 import allIngredients from "./data/all-ingredients-data.js";
-// import vegetableIngredients from "./data/vegetable-ingredients-data.js";
-// import seafoodIngredients from "./data/seafood-ingredients-data.js";
-// import meatIngredients from "./data/meat-ingredients-data.js";
-// import fruitIngredients from "./data/fruit-ingredients-data.js";
-// import dryCannedIngredients from "./data/dry-canned-ingredients-data.js";
-// import dairyIngredients from "./data/dairy-ingredients-data.js";
-// import condimentsIngredients from "./data/condiments-data.js";
-// import bakingAndSpicesIngredients from "./data/bakingspices-ingredients-data.js";
-import cors from 'cors'
 
-// const categoriesData = [
-//   vegetableIngredients,
-//   seafoodIngredients,
-//   meatIngredients,
-//   fruitIngredients,
-//   dryCannedIngredients,
-//   dairyIngredients,
-//   condimentsIngredients,
-//   bakingAndSpicesIngredients,
-// ];
+import cors from 'cors'
 
 const ATLAS_URI = process.env.ATLAS_URI;
 
@@ -58,10 +40,66 @@ app.get("/all-ingredients", async (req, res) => {
   });
 });
 app.get("/get-all-vegetables", async (req, res) => {
-  const ingredients = await allIngredientsModel.find({ category: 'Vegetable' }); //schema model for all ingredients collection, gets all entries
+  const ingredients = await allIngredientsModel.find({ category: 'Vegetable' }); 
   console.log("Sending data")
   res.send({
-    data: ingredients, //sends ingredients from MongoDb to frontend
+    data: ingredients,
+  });
+});
+app.get("/get-all-seafoods", async (req, res) => {
+  const ingredients = await allIngredientsModel.find({ category: 'Seafood' }); 
+  console.log("Sending data")
+  res.send({
+    data: ingredients,
+  });
+});
+app.get("/get-all-meats", async (req, res) => {
+  const ingredients = await allIngredientsModel.find({ category: 'Meat' }); 
+  console.log("Sending data")
+  res.send({
+    data: ingredients,
+  });
+});
+app.get("/get-all-fruits", async (req, res) => {
+  const ingredients = await allIngredientsModel.find({ category: 'Fruit' }); 
+  console.log("Sending data")
+  res.send({
+    data: ingredients,
+  });
+});
+app.get("/get-all-dry-canned-goods", async (req, res) => {
+  const ingredients = await allIngredientsModel.find({ category: 'Dry And Canned Goods' }); 
+  console.log("Sending data")
+  res.send({
+    data: ingredients,
+  });
+});
+app.get("/get-all-dairy", async (req, res) => {
+  const ingredients = await allIngredientsModel.find({ category: 'Dairy' }); 
+  console.log("Sending data")
+  res.send({
+    data: ingredients,
+  });
+});
+app.get("/get-all-condiments", async (req, res) => {
+  const ingredients = await allIngredientsModel.find({ category: 'Condiments' }); 
+  console.log("Sending data")
+  res.send({
+    data: ingredients,
+  });
+});
+app.get("/get-all-baking-and-spices", async (req, res) => {
+  const ingredients = await allIngredientsModel.find({ category: 'Baking And Spices' }); 
+  console.log("Sending data")
+  res.send({
+    data: ingredients,
+  });
+});
+app.get("/get-all-other", async (req, res) => {
+  const ingredients = await allIngredientsModel.find({ category: 'Other' }); 
+  console.log("Sending data")
+  res.send({
+    data: ingredients,
   });
 });
 

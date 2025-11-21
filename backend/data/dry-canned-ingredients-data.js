@@ -41,6 +41,13 @@ const dryCannedIngredients = [
       "https://www.shutterstock.com/image-photo/pineapple-cuts-isolated-raw-ananas-260nw-2296745519.jpg",
     measurement: "",
   },
+  {
+    name: "Spaghetti Pasta",
+    category: "Dry And Canned Goods",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/dry-spaghetti-isolated-on-white-260nw-133529486.jpg",
+    measurement: "",
+  },
 ];
 
 export default dryCannedIngredients;

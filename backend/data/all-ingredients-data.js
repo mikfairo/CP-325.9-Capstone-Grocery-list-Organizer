@@ -6,6 +6,7 @@ import dryCannedIngredients from "./dry-canned-ingredients-data.js";
 import dairyIngredients from "./dairy-ingredients-data.js";
 import condimentsIngredients from "./condiments-data.js";
 import bakingAndSpicesIngredients from "./bakingspices-ingredients-data.js";
+import otherIngredients from "./other-ingredients.js";
 
 const allCategories = [
   vegetableIngredients,
@@ -16,6 +17,7 @@ const allCategories = [
   dairyIngredients,
   condimentsIngredients,
   bakingAndSpicesIngredients,
+  otherIngredients,
 ];
 
 const allIngredients = allCategories.flat();

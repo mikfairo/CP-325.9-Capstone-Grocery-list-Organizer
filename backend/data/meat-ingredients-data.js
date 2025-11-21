@@ -62,6 +62,13 @@ const meatIngredients = [
       "https://t4.ftcdn.net/jpg/00/14/52/57/360_F_14525796_xgiHs1TmwKeB6SDP2wBBOmkknYR8Py5D.jpg",
     measurement: "",
   },
+   {
+    name: "Mortadella",
+    category: "Meat",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/mortadella-bologna-isolated-on-white-260nw-1538522132.jpg",
+    measurement: "",
+  },
 ];
 
 export default meatIngredients;
