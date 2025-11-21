@@ -13,7 +13,6 @@ function HomePage() {
   const [recipeSelections, setRecipeSelections] = useState([])
   const inputRef = useRef();
 
- 
   useEffect(() => {
    const fetchIngredients = async () => {
     const response = await fetch('http://localhost:3000/all-ingredients')
