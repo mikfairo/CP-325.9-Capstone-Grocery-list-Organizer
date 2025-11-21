@@ -3,10 +3,14 @@ import allCategories from "./components/all-ingredients";
 import Form from "./components/Form";
 import "./index.css";
 import { useEffect } from "react";
+import { useRef } from "react";
 
 function App() {
+  
   const [inputText, setInputText] = useState("");
   const [filteredIngredients, setFilteredIngredients] = useState([]);
+  const [recipeSelections, setRecipeSelections] = useState([])
+  const inputRef = useRef();
 
   const allIngredients = allCategories.flat();
   useEffect(() => {
@@ -26,12 +30,15 @@ function App() {
       <h1 className="text-black text-5xl text-center front-extrabold">
         Grocery List Organizer
       </h1>
-
+      {recipeSelections.map((recipe) => (
+        <h1>{recipe}</h1>
+      ))}
       <div className="flex justify-center mt-6">
         <input
           placeholder="Search"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
+          ref={inputRef}
           className="p-2 rounded border border-gray-400 w-1/2"
         />
       </div>
@@ -39,7 +46,7 @@ function App() {
         {filteredIngredients.map((ingredient) => (
           <div
             key={ingredient.name}
-            className="bg-white rounded-lg shadow-md p-3 text-center"
+            className="bg-white w-90 rounded-lg shadow-md p-3 text-center"
           >
   
             <div className="aspect-square w-full overflow-hidden rounded-md">
@@ -47,6 +54,13 @@ function App() {
               src={ingredient.thumbnail}
               alt={ingredient.name}
               className="w-full h-full object-cover "
+              onClick={() => { 
+                setRecipeSelections(prev => [...prev, ingredient.name])
+                setInputText('')
+                setFilteredIngredients([])
+                inputRef.current.value = ''
+              }}
+              // clears input text field and the images after user clicks ingredients
             />
             </div>
             <p className="text-lg font-semibold mt-2">{ingredient.name}</p>

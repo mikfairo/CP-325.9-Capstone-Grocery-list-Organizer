@@ -41,6 +41,13 @@ const condimentsIngredients = [
       "https://www.shutterstock.com/image-photo/ketchup-on-white-background-portion-260nw-526091368.jpg",
     measurement: "",
   },
+  {
+    name: "Worcestershire Sauce",
+    category: "Condiments",
+    thumbnail:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLHAClO2HDXjQatH-RljzFDgr9Vnct0kJ3tQ&s",
+    measurement: "",
+  },
 ];
 
 export default condimentsIngredients;
