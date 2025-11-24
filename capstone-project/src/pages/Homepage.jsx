@@ -5,12 +5,13 @@ import Form from "../components/Form";
 import "../index.css";
 import { useEffect } from "react";
 import { useRef } from "react";
+import axios from "axios";
 
 function HomePage() {
   const [inputText, setInputText] = useState("");
   const [allIngredients, setAllIngredients] = useState([]);
   const [filteredIngredients, setFilteredIngredients] = useState([]);
-  const [recipeSelections, setRecipeSelections] = useState([]);
+  const [ingredientSelections, setIngredientSelections] = useState([]);
   const [recipeName, setRecipeName] = useState("");
   const inputRef = useRef();
 
@@ -28,7 +29,7 @@ function HomePage() {
   useEffect(() => {
     if (inputText) {
       const filtered = allIngredients.filter((ingredient) =>
-        ingredient.name.toLowerCase().includes(inputText)
+        ingredient.name.toLowerCase().includes(inputText.toLowerCase())
       ); //returns the ingredient objects whose names include user inputText
       setFilteredIngredients(filtered);
       console.log(filtered);
@@ -42,44 +43,84 @@ function HomePage() {
       </h1>
       <br />
       <Nav />
+      {/* recipe card with ingredients */}
+      <button
+        onClick={async () => {
+          const response = await axios.post("http://localhost:3000/save-recipe", { 
+            data: {
+              name: recipeName,
+              recipe: ingredientSelections
+            }
+          });
+          console.log(response.data)
 
+        }}
+      >
+        Save Recipe
+      </button>
       <div className="flex justify-center mt-6">
         <div className="bg-white w-full h-full rounded-lg shadow-md p-3 text-center">
           <div className="p-5">
-            <label>Recipe name:
-            <input placeholder="Name your recipe"
-            onChange={(e) => setRecipeName(e.target.value)}></input>
+            <p className="text-lg mb-5">
+              Name your recipe, search and add ingredients by clicking the
+              ingredient card, choose quantities and measurements, then click
+              Submit when you're done.
+              <br /> Your recipes will be saved in the "My Recipes" tab above.
+            </p>
+
+            <label className="flex justify-center gap-3">
+              Recipe name:
+              <input
+                className="p-2 rounded border border-gray-300 w-1/3"
+                placeholder="Name your recipe"
+                onChange={(e) => setRecipeName(e.target.value)}
+              ></input>
             </label>
-            {recipeSelections.map((recipe) => (
-              <div className="flex flex-row">
-                <h1 className="p-1">{recipe.name}</h1>
-                <select
+            {ingredientSelections.map((ingredient) => (
+              <div className="flex flex-row justify-center mt-5 gap-3">
+                <h1 className="p-1">{ingredient.name}</h1>
+                <input
+                  className="p-1 rounded border border-gray-300 w-1/11"
+                  placeholder="Enter quantity"
                   onChange={(e) => {
-                    const currentRecipes = recipeSelections
-                    currentRecipes.map(cRecipe => {
-                      if (cRecipe.name === recipe.name) {
-                        cRecipe.measurement = e.target.value
+                    const currentIngredients = ingredientSelections;
+                    currentIngredients.map((cIngredient) => {
+                      if (cIngredient.name === ingredient.name) {
+                        cIngredient.quantity = e.target.value;
                       }
-                
-                    })
-                    setRecipeSelections(currentRecipes);
+                    });
+                    setIngredientSelections(currentIngredients);
+                  }}
+                ></input>
+
+                <select
+                  className="p-1 rounded border border-gray-300 w-1/6"
+                  onChange={(e) => {
+                    const currentIngredients = ingredientSelections;
+                    currentIngredients.map((cIngredient) => {
+                      if (cIngredient.name === ingredient.name) {
+                        cIngredient.measurement = e.target.value;
+                      }
+                    });
+                    setIngredientSelections(currentIngredients);
                   }}
                 >
                   {measurementTypes.map((type) => (
                     <option>{type}</option>
                   ))}
                 </select>
-                <input placeholder="Enter quantity"
-                   onChange={(e) => {
-                    const currentRecipes = recipeSelections
-                    currentRecipes.map(cRecipe => {
-                      if (cRecipe.name === recipe.name) {
-                        cRecipe.quantity = e.target.value
-                      }
-                
-                    })
-                    setRecipeSelections(currentRecipes);
-                  }}></input>
+                <button
+                  className="ml-2 border border-gray-300 px-2 py-1 rounded hover:bg-blue-100"
+                  onClick={() => {
+                    const currentIngredients = ingredientSelections;
+                    const filteredIngredients = currentIngredients.filter(
+                      (cIngredient) => cIngredient.name !== ingredient.name
+                    );
+                    setIngredientSelections(filteredIngredients);
+                  }}
+                >
+                  delete
+                </button>
               </div>
             ))}
           </div>
@@ -88,7 +129,7 @@ function HomePage() {
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             ref={inputRef}
-            className="p-2 rounded border border-gray-400 w-1/2"
+            className="p-2 rounded border border-gray-300 w-1/2"
           />
         </div>
       </div>
@@ -108,11 +149,11 @@ function HomePage() {
                 onClick={() => {
                   const newIngredient = {
                     name: ingredient.name,
-                    measurement: undefined,
+                    measurement: 'cups',
                     quantity: undefined,
                   };
-                  setRecipeSelections((prev) => [...prev, newIngredient]);
-                  // setRecipeSelections((previousData) => ({ ...previousData, name: ingredient.name, measurement: undefined, quantity: undefined }));
+                  setIngredientSelections((prev) => [...prev, newIngredient]);
+                  // setIngredientSelections((previousData) => ({ ...previousData, name: ingredient.name, measurement: undefined, quantity: undefined }));
                   setInputText("");
                   setFilteredIngredients([]);
                   inputRef.current.value = "";
