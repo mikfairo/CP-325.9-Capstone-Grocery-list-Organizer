@@ -9,3 +9,4 @@ const measurementTypes = [
   "oz.",
   "grams",
 ];
+export default measurementTypes;

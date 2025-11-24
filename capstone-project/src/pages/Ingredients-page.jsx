@@ -39,7 +39,7 @@ function IngredientsPage() {
     console.log(response);
     const ingredients = await response.json();
     const data = ingredients.data;
-
+  console.log(data);
     setFilteredIngredients(data);
   };
 
