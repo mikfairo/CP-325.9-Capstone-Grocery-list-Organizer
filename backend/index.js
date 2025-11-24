@@ -91,6 +91,7 @@ app.get("/get-all-condiments", async (req, res) => {
 app.get("/get-all-baking-and-spices", async (req, res) => {
   const ingredients = await allIngredientsModel.find({ category: 'Baking and Spices' }); 
   console.log("Sending data")
+  console.log(ingredients)
   res.send({
     data: ingredients,
   });

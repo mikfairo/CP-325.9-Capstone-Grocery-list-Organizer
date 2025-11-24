@@ -76,6 +76,27 @@ const vegetableIngredients = [
       'https://t4.ftcdn.net/jpg/00/39/95/75/360_F_39957502_4YjJ5Lvj0nO93utBTkMLsIzcTBKwKCoE.jpg',
     measurement: '',
   },
+   {
+    name: 'Celery',
+    category: 'Vegetable',
+    thumbnail:
+      'https://www.shutterstock.com/image-photo/celery-isolated-on-white-background-260nw-259956566.jpg',
+    measurement: '',
+  },
+  {
+    name: 'Daikon Radish', 
+    category: 'Vegetable', 
+    thumbnail: 
+    'https://t4.ftcdn.net/jpg/04/15/04/97/360_F_415049730_x0VVdyc88Xfi9kGa9fiGWEA6myML2xeq.jpg',
+    measurement: '', 
+  },
+  {
+    name: 'Shallots', 
+    category: 'Vegetable', 
+    thumbnail: 
+    'https://images.squarespace-cdn.com/content/v1/5a26e6eef6576e82a73f04b2/1572995785607-6EU9OPEPOQ36JLON7K7V/shallot-onion-500x500.jpeg',
+    measurement: '', 
+  },
 ];
 
 export default vegetableIngredients;
