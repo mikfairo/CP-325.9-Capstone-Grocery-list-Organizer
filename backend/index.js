@@ -148,6 +148,8 @@ app.post("/save-recipe-list", async (req, res) => {
   })
 });
 
-app.listen(3000, () => {
+const port = process.env.PORT // render will pick a port for us
+
+app.listen(port, () => {
   console.log("Listening on port: 3000");
 });
