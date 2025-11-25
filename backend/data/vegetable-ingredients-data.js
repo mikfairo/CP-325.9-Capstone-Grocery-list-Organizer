@@ -97,6 +97,13 @@ const vegetableIngredients = [
     'https://images.squarespace-cdn.com/content/v1/5a26e6eef6576e82a73f04b2/1572995785607-6EU9OPEPOQ36JLON7K7V/shallot-onion-500x500.jpeg',
     measurement: '', 
   },
+    {
+    name: 'Iceberg Lettuce', 
+    category: 'Vegetable', 
+    thumbnail: 
+    'https://img.freepik.com/premium-photo/green-iceberg-lettuce-white-background_253984-5926.jpg',
+    measurement: '', 
+  },
 ];
 
 export default vegetableIngredients;
