@@ -7,6 +7,13 @@ const otherIngredients = [
     measurement: "",
   },
   {
+    name: "Beef Broth",
+    category: "Other",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/bone-bouillon-white-bowl-beef-260nw-1901410450.jpg",
+    measurement: "",
+  },
+  {
     name: "White Button Mushrooms",
     category: "Other",
     thumbnail:
@@ -32,6 +39,13 @@ const otherIngredients = [
     category: "Other",
     thumbnail:
       "https://static.vecteezy.com/system/resources/previews/030/666/664/large_2x/eggs-with-white-background-high-quality-ultra-hd-free-photo.jpg",
+    measurement: "",
+  },
+  {
+    name: "Chicken Broth",
+    category: "Other",
+    thumbnail:
+      "https://img.freepik.com/premium-photo/plate-fresh-chicken-broth-white-background-top-view_518173-1065.jpg",
     measurement: "",
   },
 ];

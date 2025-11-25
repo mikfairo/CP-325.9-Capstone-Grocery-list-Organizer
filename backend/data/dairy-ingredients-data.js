@@ -6,11 +6,32 @@ const dairyIngredients = [
       "https://t3.ftcdn.net/jpg/02/40/14/70/360_F_240147049_1DKgPqORVBXfHdqh7YZvCgDbQl7LVptM.jpg",
     measurement: "",
   },
+   {
+    name: "American Cheese",
+    category: "Dairy",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/slices-processed-american-cheese-on-260nw-264907028.jpg",
+    measurement: "",
+  },
+  {
+    name: "Cream Cheese",
+    category: "Dairy",
+    thumbnail:
+      "https://as1.ftcdn.net/jpg/02/15/71/86/1000_F_215718655_5jFSRjvlQgDzVNks5oJKLuKrsFU5L3TG.jpg",
+    measurement: "",
+  },
   {
     name: "Unsalted Butter",
     category: "Dairy",
     thumbnail:
       "https://t3.ftcdn.net/jpg/02/40/14/70/360_F_240147049_1DKgPqORVBXfHdqh7YZvCgDbQl7LVptM.jpg",
+    measurement: "",
+  },
+  {
+    name: "Mozzarella Cheese",
+    category: "Dairy",
+    thumbnail:
+      "https://img.freepik.com/premium-photo/delicious-mozzarella-cheese-isolated-white-background_185193-30221.jpg",
     measurement: "",
   },
   {

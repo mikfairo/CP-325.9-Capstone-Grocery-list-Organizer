@@ -20,6 +20,20 @@ const seafoodIngredients = [
       "https://img.freepik.com/premium-photo/boiled-mussel-isolated-white-background-deliciousness_174533-1654.jpg",
     measurement: "",
   },
+  {
+    name: "Cod Fish Fillet",
+    category: "Seafood",
+    thumbnail:
+      "https://img.freepik.com/premium-photo/raw-norwegian-skrei-cod-fish-fillet-isolated-white-background_89816-45844.jpg",
+    measurement: "",
+  },
+  {
+    name: "Tuna Fillet",
+    category: "Seafood",
+    thumbnail:
+      "https://t4.ftcdn.net/jpg/04/13/47/63/360_F_413476352_bZbis0r85S9dZfNgZf1dPEuzEReuV53w.jpg",
+    measurement: "",
+  },
 ];
 
 export default seafoodIngredients;

@@ -6,6 +6,20 @@ const dryCannedIngredients = [
       "https://t4.ftcdn.net/jpg/08/06/72/11/360_F_806721185_I3N974OkHy5QFd85tUvtn5CKmXSfDn4a.jpg",
     measurement: "",
   },
+    {
+    name: "Macaroni Pasta",
+    category: "Dry And Canned Goods",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/group-macaroni-pasta-on-white-260nw-475919851.jpg",
+    measurement: "",
+  },
+  {
+    name: "Canned Tuna",
+    category: "Dry And Canned Goods",
+    thumbnail:
+      "http://shutterstock.com/image-photo/bowl-canned-tuna-on-white-260nw-1129191833.jpg",
+    measurement: "",
+  },
   {
     name: "Canned Kidney Beans",
     category: "Dry And Canned Goods",

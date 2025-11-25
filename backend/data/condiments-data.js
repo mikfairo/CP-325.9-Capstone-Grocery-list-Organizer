@@ -48,6 +48,13 @@ const condimentsIngredients = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLHAClO2HDXjQatH-RljzFDgr9Vnct0kJ3tQ&s",
     measurement: "",
   },
+  {
+    name: "Fish Sauce",
+    category: "Condiments",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/fish-sauce-white-bowl-isolated-260nw-568137871.jpg",
+    measurement: "",
+  },
 ];
 
 export default condimentsIngredients;

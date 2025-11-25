@@ -13,6 +13,13 @@ const meatIngredients = [
       "https://img.freepik.com/premium-photo/raw-chicken-wings-with-skin-white-background_280340-836.jpg",
     measurement: "",
   },
+   {
+    name: "Skirt Steak",
+    category: "Meat",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/raw-machete-skirt-beef-steak-600nw-2282204517.jpg",
+    measurement: "",
+  },
   {
     name: "Chicken Thighs",
     category: "Meat",
@@ -67,6 +74,13 @@ const meatIngredients = [
     category: "Meat",
     thumbnail:
       "https://www.shutterstock.com/image-photo/mortadella-bologna-isolated-on-white-260nw-1538522132.jpg",
+    measurement: "",
+  },
+  {
+    name: "Honey Ham",
+    category: "Meat",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/four-slices-honey-ham-deli-260nw-288658199.jpg",
     measurement: "",
   },
 ];

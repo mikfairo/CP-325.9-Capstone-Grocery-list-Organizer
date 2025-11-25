@@ -104,6 +104,34 @@ const bakingAndSpicesIngredients = [
       "https://www.shutterstock.com/image-photo/spoon-granulated-sugar-isolated-on-260nw-2431188567.jpg",
     measurement: "",
   },
+   {
+    name: "Raisins",
+    category: "Baking and Spices",
+    thumbnail:
+      "https://img.freepik.com/premium-photo/raisins-isolated-white-background_403166-1537.jpg",
+    measurement: "",
+  },
+   {
+    name: "All Purpose Flour",
+    category: "Baking and Spices",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/flour-white-bowl-on-background-260nw-1717017883.jpg",
+    measurement: "",
+  },
+    {
+    name: "Turmeric Powder",
+    category: "Baking and Spices",
+    thumbnail:
+      "https://www.shutterstock.com/image-photo/turmeric-powder-white-bowl-isolated-260nw-456269257.jpg",
+    measurement: "",
+  },
+    {
+    name: "Cornstarch",
+    category: "Baking and Spices",
+    thumbnail:
+      "https://t4.ftcdn.net/jpg/01/58/79/03/360_F_158790372_65t8BFDR9rfJSFNGzcN7kshiA5Ef6qd3.jpg",
+    measurement: "",
+  },
 ];
 
 export default bakingAndSpicesIngredients;
