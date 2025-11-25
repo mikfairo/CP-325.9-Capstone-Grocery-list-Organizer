@@ -17,6 +17,7 @@ function HomePage() {
 
   useEffect(() => {
     const fetchIngredients = async () => {
+      // const response = await fetch("http://localhost:3000/all-ingredients");
       const response = await fetch("https://cp-325-9-capstone-grocery-list-organizer.onrender.com/all-ingredients");
       console.log(response);
       const ingredients = await response.json();
@@ -44,20 +45,6 @@ function HomePage() {
       <br />
       <Nav />
       {/* recipe card with ingredients */}
-      <button
-        onClick={async () => {
-          const response = await axios.post("https://cp-325-9-capstone-grocery-list-organizer.onrender.com/save-recipe", { 
-            data: {
-              name: recipeName,
-              recipe: ingredientSelections
-            }
-          })
-          console.log(response.data)
-
-        }}
-      >
-        Save Recipe
-      </button>
       <div className="flex justify-center mt-6">
         <div className="bg-white w-full h-full rounded-lg shadow-md p-3 text-center">
           <div className="p-5">
@@ -110,7 +97,7 @@ function HomePage() {
                   ))}
                 </select>
                 <button
-                  className="ml-2 border border-gray-300 px-2 py-1 rounded hover:bg-blue-100"
+                  className="ml-2 border border-gray-300 px-2 py-1 rounded hover:bg-red-400"
                   onClick={() => {
                     const currentIngredients = ingredientSelections;
                     const filteredIngredients = currentIngredients.filter(
@@ -131,6 +118,22 @@ function HomePage() {
             ref={inputRef}
             className="p-2 rounded border border-gray-300 w-1/2"
           />
+          <button
+            className="ml-2 border bg-white px-2 py-1 rounded hover:bg-green-300"
+            onClick={async () => {
+              // const response = await axios.post("http://localhost:3000/save-recipe",{
+                  const response = await axios.post("https://cp-325-9-capstone-grocery-list-organizer.onrender.com/save-recipe", {
+                  data: {
+                    name: recipeName,
+                    recipe: ingredientSelections,
+                  },
+                }
+              );
+              console.log(response.data);
+            }}
+          >
+            Save Recipe
+          </button>
         </div>
       </div>
       <br />
@@ -149,7 +152,7 @@ function HomePage() {
                 onClick={() => {
                   const newIngredient = {
                     name: ingredient.name,
-                    measurement: 'cups',
+                    measurement: "cups",
                     quantity: undefined,
                   };
                   setIngredientSelections((prev) => [...prev, newIngredient]);
