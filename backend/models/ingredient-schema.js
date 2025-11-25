@@ -32,15 +32,7 @@ const ingredientSchema = new mongoose.Schema({
   }
 });
 
-// const categoryModels = [];
-
-// categoriesSet.forEach((category) => {
-//   categoryModels.push(mongoose.model(category, ingredientSchema));
-// });
-
 
 export {
-  // categoryModels,
-  // categoriesSet,
   ingredientSchema,
 };

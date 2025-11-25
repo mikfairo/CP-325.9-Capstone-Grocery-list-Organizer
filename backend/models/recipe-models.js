@@ -11,7 +11,7 @@ const recipeIngredient = new mongoose.Schema({
       },
       quantity: {
         type: String,
-        require:true,
+        required:true,
       },
 });
 

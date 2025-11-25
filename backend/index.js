@@ -7,6 +7,7 @@ import {
 } from "./models/ingredient-schema.js";
 import allIngredients from "./data/all-ingredients-data.js";
 import recipeModel from "./models/recipe-models.js";
+import groceryListModel from "./models/recipe-list-schema.js";
 
 import cors from "cors";
 
@@ -24,6 +25,7 @@ await allIngredientsModel.deleteMany({});
 console.log("Deleted all entries");
 await allIngredientsModel.create(allIngredients);
 console.log("Created all entries");
+
 
 const app = express();
 app.use(express.json());
@@ -134,7 +136,17 @@ app.get("/get-all-recipes", async (req, res) => {
     data: allRecipes,
   });
 });
-
+app.delete("/delete-recipe", async (req, res) => {
+  const deleteRecipe = await recipeModel.deleteOne({name:req.body.name})
+    console.log(deleteRecipe)
+    res.send("Success!");
+})
+app.post("/save-recipe-list", async (req, res) => {
+  await groceryListModel.create(req.body.items)
+  res.send({
+    data: 'Saved recipe successfully'
+  })
+});
 
 app.listen(3000, () => {
   console.log("Listening on port: 3000");
