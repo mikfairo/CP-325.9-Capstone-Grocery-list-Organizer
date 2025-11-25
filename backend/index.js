@@ -7,7 +7,7 @@ import {
 } from "./models/ingredient-schema.js";
 import allIngredients from "./data/all-ingredients-data.js";
 import recipeModel from "./models/recipe-models.js";
-import groceryListModel from "./models/recipe-list-schema.js";
+import groceryListModel from "./models/grocery-list-schema.js";
 
 import cors from "cors";
 
@@ -141,10 +141,23 @@ app.delete("/delete-recipe", async (req, res) => {
     console.log(deleteRecipe)
     res.send("Success!");
 })
-app.post("/save-recipe-list", async (req, res) => {
-  await groceryListModel.create(req.body.items)
+app.patch("/update-recipe", async (req, res) => {
+  const response = await recipeModel.updateOne(
+    { name: req.body.name },
+    { $set: { recipe: req.body.newIngredients } },
+  )
+ console.log(response)
   res.send({
-    data: 'Saved recipe successfully'
+    data: 'Updated recipe successfully'
+  })
+});
+app.post("/save-grocery-list", async (req, res) => {
+  console.log('called save grocery list endpoint')
+  console.log(req.body.items)
+  const newList = new groceryListModel({ ingredients: req.body.items});
+  await newList.save();
+  res.send({
+    data: 'Grocery list saved successfully'
   })
 });
 
