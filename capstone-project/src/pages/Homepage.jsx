@@ -51,7 +51,7 @@ function HomePage() {
               name: recipeName,
               recipe: ingredientSelections
             }
-          });
+          })
           console.log(response.data)
 
         }}
