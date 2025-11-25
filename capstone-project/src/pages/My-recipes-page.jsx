@@ -9,7 +9,7 @@ export default function MyRecipesPage() {
 
   useEffect(() => {
     const fetchRecipes = async () => {
-      const response = await fetch("http://localhost:3000/get-all-recipes");
+      const response = await fetch("https://cp-325-9-capstone-grocery-list-organizer.onrender.com/get-all-recipes");
       console.log(response);
       const allRecipes = await response.json();
       const data = allRecipes.data;
@@ -65,7 +65,7 @@ export default function MyRecipesPage() {
             </div>
             <button className= "ml-2 border border-gray-300 px-2 py-1 rounded hover:bg-red-400"
             onClick={async () => {
-              const response = await axios.delete("http://localhost:3000/delete-recipe", {
+              const response = await axios.delete("https://cp-325-9-capstone-grocery-list-organizer.onrender.com/delete-recipe", {
                 data: {
                   name: recipe.name,
                 }
@@ -93,7 +93,7 @@ export default function MyRecipesPage() {
         onClick={async () => {
           const groceryList = generateGroceryList();
           try{
-            const response = await axios.post("http://localhost:3000/save-recipe-list", {
+            const response = await axios.post("https://cp-325-9-capstone-grocery-list-organizer.onrender.com/save-recipe-list", {
               items: groceryList,
             })
              console.log("Grocery list saved:", response.data);

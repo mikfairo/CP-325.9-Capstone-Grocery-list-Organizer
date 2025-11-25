@@ -12,7 +12,7 @@ function IngredientsPage() {
 
   useEffect(() => {
     const fetchIngredients = async () => {
-      const response = await fetch("http://localhost:3000/all-ingredients");
+      const response = await fetch("https://cp-325-9-capstone-grocery-list-organizer.onrender.com/all-ingredients");
       console.log(response);
       const ingredients = await response.json();
       const data = ingredients.data;
@@ -35,7 +35,7 @@ function IngredientsPage() {
   }, [inputText, allIngredients]); //reruns code everything inputText changes
 
   const fetchIngredientsByCategory = async (endpoint) => {
-    const response = await fetch(`http://localhost:3000/${endpoint}`);
+    const response = await fetch(`https://cp-325-9-capstone-grocery-list-organizer.onrender.com/${endpoint}`);
     console.log(response);
     const ingredients = await response.json();
     const data = ingredients.data;

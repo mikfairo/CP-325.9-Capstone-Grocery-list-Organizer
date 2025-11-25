@@ -17,7 +17,7 @@ function HomePage() {
 
   useEffect(() => {
     const fetchIngredients = async () => {
-      const response = await fetch("http://localhost:3000/all-ingredients");
+      const response = await fetch("https://cp-325-9-capstone-grocery-list-organizer.onrender.com/all-ingredients");
       console.log(response);
       const ingredients = await response.json();
       const data = ingredients.data;
@@ -46,7 +46,7 @@ function HomePage() {
       {/* recipe card with ingredients */}
       <button
         onClick={async () => {
-          const response = await axios.post("http://localhost:3000/save-recipe", { 
+          const response = await axios.post("https://cp-325-9-capstone-grocery-list-organizer.onrender.com/save-recipe", { 
             data: {
               name: recipeName,
               recipe: ingredientSelections
